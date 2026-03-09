@@ -1,6 +1,15 @@
+//dotenv
+//express
+//mongoose
+//cookie-parser
+//multer
+//uuid
+
+
 require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const logger = require("./middleware/logger");
 
 const db = require("./pkg/db/index");
 const auth = require("./handlers/authHandler");
@@ -9,8 +18,24 @@ const bookings = require("./handlers/booking");
 
 const app = express();
 
+app.use(logger);
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(express.static("public"));
+
+app.set("view engine", "ejs");
+
+// Login view
+app.get("/login", (req, res) => {
+  res.render("login", {
+    title: "Login Page",
+    message: "Please enter your credentials"
+  });
+});
+
+// Login od EJS form
+app.post("/login", auth.login);
 
 // AUTH
 app.post("/api/v1/signup", auth.signup);
@@ -35,6 +60,6 @@ app.delete("/api/v1/bookings/:id", auth.protect, auth.restrict("admin"), booking
 const port = process.env.PORT || 3000;
 
 (async () => {
-  await db.init(); // ✅ прво DB
+  await db.init();
   app.listen(port, () => console.log("LISTENING ON PORT:", port));
 })();
