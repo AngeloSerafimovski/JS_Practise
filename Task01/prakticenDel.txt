@@ -1,0 +1,11 @@
+1. mesto od veb stranici kade shto mozeme da gi otvarame preku internet so pomosh na browser (Kako chrome, mozilla itn itn..)
+2. request i response
+3. node.js e sredina kade sto mozeme da izvrsuvame javascript na server
+4. Node JS - okolina kade sto se izvrsuva javascript , Express e modul/framework za node.js koj sto ni olesnuva da pravime ruti, serveri i APis
+5. MVC - struktuiranje na kodot / organizacija na kodot. Celta e da kodot e pocist, poureden i polesen za odrzuvanje
+6.Ruti se pateki (na primer: /home , /signup , /login itn itn..)
+7.delovi od kod koi shto se importiraat od drugi fajlovi. So cel da se olesni samiot production.(core moduli, third-paty moduli i custom moduli)
+8.Web service - E sistem koi sto ovozmozuva aplikaciite da komuniciraat preku mrezi (internet)
+9.MongoDB e baza na podatoci sto cuva podatoci vo forma na dokumenti namesto tabeli (JSON)
+10.MongoDB e samata baza a Mongoose e biblioteka sto ni pomaga polesno da rabotime so MongoDB.
+11.Sinhrona - Se izvrsuva redosledno, se ceka edna funkcija da zavrsi pa odi na slednata ;  Asinhrona, ne ceka.Prodolzuva so izvrsuvanje dodeka prethodnata funkcija se izvrsuva vo pozadina.
