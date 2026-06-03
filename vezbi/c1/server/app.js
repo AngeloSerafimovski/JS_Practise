@@ -8,6 +8,9 @@ const pochvaRoutes = require("./Routes/pochvaRoutes");
 
 
 const app = express();
+const cors = require("cors");
+
+app.use(cors());
 app.use(express.json());
 
 const DB = process.env.DATABASE.replace(
