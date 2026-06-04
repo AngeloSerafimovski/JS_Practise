@@ -29,7 +29,7 @@ exports.signup =  async ( req, res ) => {
 
 const signToken = (id) => {
     return jwt.sign({ id },process.env.JWT_SECRET,{
-        expiresIn: proccess.env.JWT_EXPIRES_IN,
+        expiresIn: process.env.JWT_EXPIRES_IN,
     });
 };
 
@@ -70,6 +70,7 @@ exports.login = async (req, res) => {
     // vrakjanje response
     res.status(200).json({
       status: "success",
+      token,
       message: "Logged in successfully",
     });
   } catch (err) {
